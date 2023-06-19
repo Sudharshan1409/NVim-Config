@@ -1,0 +1,21 @@
+w --> jump forward to beginning of next word
+W --> jump forward to beginning of next word but ignores punctuation
+b --> same as w but backwards
+B --> same as W but backwards
+e --> jump forward to end of word
+E --> jump backward to end of word
+t --> move cursor before character (forward)
+T --> move cursor after character (backward)
+f --> move cursor to character (forward)
+F --> move cursor to character (backward)
+% --> jump to matching braces
+
+# --> search backwards for current word
+
+- --> search forwards for current word
+  / --> in command mode in order to search word
+  qa --> start recording macro 'a' and q to quit it
+  '+p --> paste from clipboard
+  ma --> mark line as 'a' 'A' if you want it global (across all files)
+  'a --> jump to 'a' 'A' if global
+  :%s/word/newword --> replace word to newword in whole file (can use \c for case insensitive and \C for case sensitive after word, default: case insensitive)
