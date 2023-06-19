@@ -11,8 +11,8 @@ Plug 'tmhedberg/SimpylFold'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'vim-syntastic/syntastic'
 Plug 'nvie/vim-flake8'
-Plug 'Valloric/YouCompleteMe'
 Plug 'github/copilot.vim'
+
 call plug#end()
 let g:SimpylFold_docstring_preview=1
 let python_highlight_all=1
