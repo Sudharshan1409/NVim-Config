@@ -6,13 +6,13 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'preservim/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'Valloric/YouCompleteMe'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tmhedberg/SimpylFold'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'vim-syntastic/syntastic'
 Plug 'nvie/vim-flake8'
-Plug 'neoclie/coc.nvim', {'branch': 'release'}
+Plug 'Valloric/YouCompleteMe'
+Plug 'github/copilot.vim'
 
 call plug#end()
 let g:SimpylFold_docstring_preview=1
@@ -56,10 +56,14 @@ au BufNewFile,BufRead *.py
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 " Indentation for js, html and css files
-au BufNewFile,BufRead *.js,*.html,*.css
-    \ set tabstop=2
-    \| set softtabstop=2
-    \| set shiftwidth=2
+au BufNewFile,BufRead *.js,*.html,*.css,*.ts
+    \ set tabstop=4
+    \| set softtabstop=4
+    \| set shiftwidth=4
+    \| set textwidth=79
+    \| set expandtab
+    \| set autoindent
+    \| set fileformat=unix
 
 
 
@@ -104,6 +108,14 @@ set smartindent
 set splitbelow
 set splitright
 set number
+set relativenumber
 set mouse=a
 set encoding=utf-8
 set ma
+set foldmethod=manual
+
+augroup remember_folds
+        autocmd!
+        autocmd BufWinLeave * mkview
+        autocmd BufWinEnter * silent! loadview
+augroup END
