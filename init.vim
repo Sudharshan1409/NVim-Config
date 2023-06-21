@@ -2,21 +2,28 @@ set nocompatible		" be iMproved, required
 filetype off			" required
 
 call plug#begin('~/.config/nvim/plugged')
+
+" Theme and visual
 Plug 'drewtempelmeyer/palenight.vim'
-Plug 'tpope/vim-fugitive'
+Plug 'ryanoasis/vim-devicons'
 Plug 'preservim/nerdtree' |
      \ Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'ryanoasis/vim-devicons'
-Plug 'ctrlpvim/ctrlp.vim'
+
+" Git
+Plug 'github/copilot.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-rhubarb'
+
+" Packages
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tmhedberg/SimpylFold'
 Plug 'vim-scripts/indentpython.vim'
-Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'Yggdroot/indentLine'
 Plug 'vim-syntastic/syntastic'
 Plug 'nvie/vim-flake8'
-Plug 'github/copilot.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 call plug#end()
 
 let g:SimpylFold_docstring_preview=1
