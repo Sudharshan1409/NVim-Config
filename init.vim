@@ -28,12 +28,6 @@ nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
-" Make adjusting split sizes a bit more friendly
-noremap <Leader>h :vertical resize -2<CR>
-noremap <Leader>j :resize +2<CR>
-noremap <Leader>k :resize -2<CR>
-noremap <Leader>l :vertical resize +2<CR>
-
 filetype plugin indent on 	" required
 syntax on
 set background=dark
@@ -115,7 +109,15 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+" Make adjusting split sizes a bit more friendly
+noremap <C-S-H> :vertical resize -2<CR>
+noremap <C-S-J> :resize +2<CR>
+noremap <C-S-K> :resize -2<CR>
+noremap <C-S-L> :vertical resize +2<CR>
 
+" Change 2 split windows from vertical to horizontal or vice versa
+map <leader>th <C-W>t<C-W>H
+map <leader>tk <C-W>t<C-W>K
 
 " Enable folding
 set foldmethod=indent
