@@ -13,6 +13,7 @@ Plug 'tmhedberg/SimpylFold'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
+Plug 'Yggdroot/indentLine'
 Plug 'vim-syntastic/syntastic'
 Plug 'nvie/vim-flake8'
 Plug 'github/copilot.vim'
@@ -26,6 +27,12 @@ nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
+
+" Make adjusting split sizes a bit more friendly
+noremap <Leader>h :vertical resize -2<CR>
+noremap <Leader>j :resize +2<CR>
+noremap <Leader>k :resize -2<CR>
+noremap <Leader>l :vertical resize +2<CR>
 
 filetype plugin indent on 	" required
 syntax on
