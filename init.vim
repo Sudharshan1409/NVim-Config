@@ -8,7 +8,9 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'preservim/nerdtree' |
      \ Plug 'Xuyuanp/nerdtree-git-plugin'
-
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " Git
 Plug 'github/copilot.vim'
 Plug 'tpope/vim-fugitive'
@@ -18,12 +20,14 @@ Plug 'tpope/vim-rhubarb'
 " Packages
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tmhedberg/SimpylFold'
-Plug 'vim-scripts/indentpython.vim'
-Plug 'vim-airline/vim-airline'
-Plug 'Yggdroot/indentLine'
-Plug 'vim-syntastic/syntastic'
-Plug 'nvie/vim-flake8'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'scrooloose/nerdcommenter'
+
+" Languages
+Plug 'nvie/vim-flake8'
+Plug 'vim-syntastic/syntastic'
+Plug 'Yggdroot/indentLine'
+Plug 'vim-scripts/indentpython.vim'
 call plug#end()
 
 let g:SimpylFold_docstring_preview=1
@@ -40,6 +44,7 @@ syntax on
 set background=dark
 colorscheme palenight
 let g:lightline = { 'colorscheme': 'palenight' }
+let NERDTreeShowHidden=1
 let g:airline_theme = "palenight"
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
@@ -155,3 +160,8 @@ augroup Mkdir
         autocmd BufWritePre * silent! execute '!mkdir -p %:p:h'
 augroup END
 autocmd BufWritePost * NERDTreeRefresh " auto refresh nerdtree on save
+
+" commenting stuff
+nnoremap <silent> <leader>c} V}:call nerdcommenter#Comment('x', 'toggle')<CR>
+nnoremap <silent> <leader>c{ V{:call nerdcommenter#Comment('x', 'toggle')<CR>
+
